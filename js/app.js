@@ -59,3 +59,16 @@ var octopus = {
   }
 
 };
+
+var pinguinView ={
+  init : function () {
+    // store pointers to our DOM elements
+    //The DOM (Document Object Model) is the interface between HTML and dynamic JavaScript
+    this.pinguinElem= document.getElementbyId('pinguin');
+    this.pinguinNameElem= document.getElementbyId('pinguin-name');
+    this.pinguinCountElem= document.getElementbyId('pinguin-count');
+    this.pinguinImgElem= document.getElementbyId('pinguin-img');
+    // on click, increment the current pinguin's counter Eveentlisterner !
+  }
+
+}
