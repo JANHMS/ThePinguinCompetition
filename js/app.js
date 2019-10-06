@@ -31,7 +31,7 @@ var model = {
 var octopus = {
   init: function() {
     // set our current pinguin to the first one in the list
-    model.currectpinguin = model.pinguins[0];
+    model.currentpinguin = model.pinguins[0];
 
     // tell our views to initialize
     pinguinListView.init();//simicolon after each funtion
@@ -64,10 +64,10 @@ var pinguinView ={
   init : function () {
     // store pointers to our DOM elements
     //The DOM (Document Object Model) is the interface between HTML and dynamic JavaScript
-    this.pinguinElem= document.getElementbyId('pinguin');
-    this.pinguinNameElem= document.getElementbyId('pinguin-name');
-    this.pinguinCountElem= document.getElementbyId('pinguin-count');
-    this.pinguinImgElem= document.getElementbyId('pinguin-img');
+    this.pinguinElem = document.getElementById('pinguin');
+    this.pinguinNameElem = document.getElementById('pinguin-name');
+    this.pinguinImageElem = document.getElementById('pinguin-img');
+    this.countElem = document.getElementById('pinguin-count');
     // on click, increment the current pinguin's counter Eveentlisterner !
     this.pinguinImageElem.addEventListener('click', function(){
         octopus.incrementCounter();
@@ -78,56 +78,57 @@ var pinguinView ={
 
   },
 
-  render function() {
-    // update the DOM elements with values from the current pinguin
-    var currentpinguin = octopus.getCurrentpinguin();
-    this.countElem.textContent = currectpinguin.clickCount;
-    this.pinguinNameElem.textContent = currentpinguin.name;
-    this.pinguinImageElem.src = currentpinguin.imgSrc;
-
+  render: function() {
+      // update the DOM elements with values from the current pinguin
+      var currentpinguin = octopus.getCurrentpinguin();
+      this.countElem.textContent = currentpinguin.clickCount;
+      this.pinguinNameElem.textContent = currentpinguin.name;
+      this.pinguinImageElem.src = currentpinguin.imgSrc;
   }
 };
 
 var pinguinListView = {
-  init: function() {
-    // store the DOM element
-    this.pinguinListElem = document.getElementById('pinguin-list');
 
-    // render this view
-    this.render();
+  init: function() {
+      // store the DOM element for easy access later
+      this.pinguinListElem = document.getElementById('pinguin-list');
+
+      // render this view (update the DOM elements with the right values)
+      this.render();
   },
 
   render: function() {
-    var pinguin, elem, i;//variablen sind diese drei
-    // get the pinguins we'll be rendering from the octopus
-    var pinguins = octopus.getpinguins();
+      var pinguin, elem, i;
+      // get the pinguins we'll be rendering from the octopus
+      var pinguins = octopus.getpinguins();
 
-    // empty the pinguin list
-    this.pinguinListElem.innerHTML = '';
-    // loop over the pinguins like in JAVA
-    for (i = 0; i < pinguins.length; i++) {
-        // this is the pinguin we're currently looping over
-        pinguin = pinguins[i];
+      // empty the pinguin list
+      this.pinguinListElem.innerHTML = '';
 
-        // make a new pinguin list item and set its text
-        elem = document.createElement('li');
-        elem.textContent = pinguin.name;
+      // loop over the pinguins
+      for (i = 0; i < pinguins.length; i++) {
+          // this is the pinguin we're currently looping over
+          pinguin = pinguins[i];
 
-        // on click, setCurrentpinguin and render the pinguinView
-        // (this uses a closure-in-a-loop trick to connect the value
-        //  of the pinguin variable to the click event function)
-        elem.addEventListener('click', (function(pinguinCopy) {
-            return function() {
-                octopus.setCurrentpinguin(pinguinCopy);
-                pinguinView.render();
-            };
-        })(pinguin));
+          // make a new pinguin list item and set its text
+          elem = document.createElement('li');
+          elem.textContent = pinguin.name;
 
-        // finally, add the element to the list
-        this.pinguinListElem.appendChild(elem);//append
-    }
-}
+          // on click, setCurrentpinguin and render the pinguinView
+          // (this uses our closure-in-a-loop trick to connect the value
+          //  of the pinguin variable to the click event function)
+          elem.addEventListener('click', (function(pinguinCopy) {
+              return function() {
+                  octopus.setCurrentpinguin(pinguinCopy);
+                  pinguinView.render();
+              };
+          })(pinguin));
+
+          // finally, add the element to the list
+          this.pinguinListElem.appendChild(elem);
+      }
+  }
 };
 
-//lets go
+// make it go!
 octopus.init();
