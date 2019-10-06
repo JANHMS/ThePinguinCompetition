@@ -87,4 +87,46 @@ var pinguinView ={
 
   }
 };
+
+var pinguinListView = {
+  init: function() {
+    // store the DOM element
+    this.pinguinListElem = document.getElementById('pinguin-list');
+
+    // render this view
+    this.render();
+  },
+
+  render: function() {
+    var pinguin, elem, i;//variablen sind diese drei
+    // get the pinguins we'll be rendering from the octopus
+    var pinguins = octopus.getpinguins();
+
+
+    // loop over the pinguins like in JAVA
+    for (i = 0; i < pinguins.length; i++) {
+        // this is the pinguin we're currently looping over
+        pinguin = pinguins[i];
+
+        // make a new pinguin list item and set its text
+        elem = document.createElement('li');
+        elem.textContent = pinguin.name;
+
+        // on click, setCurrentpinguin and render the pinguinView
+        // (this uses a closure-in-a-loop trick to connect the value
+        //  of the pinguin variable to the click event function)
+        elem.addEventListener('click', (function(pinguinCopy) {
+            return function() {
+                octopus.setCurrentpinguin(pinguinCopy);
+                pinguinView.render();
+            };
+        })(pinguin));
+
+        // finally, add the element to the list
+        this.pinguinListElem.appendChild(elem);//append
+    }
 }
+};
+
+//lets go
+octopus.init();
