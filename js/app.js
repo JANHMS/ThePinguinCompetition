@@ -69,6 +69,15 @@ var pinguinView ={
     this.pinguinCountElem= document.getElementbyId('pinguin-count');
     this.pinguinImgElem= document.getElementbyId('pinguin-img');
     // on click, increment the current pinguin's counter Eveentlisterner !
-  }
+    this.pinguinImageElem.addEventListener('click', function(){
+        octopus.incrementCounter();
+      });
+
+      //render the views
+      this.render();
+
+  },
+  
+
 
 }
