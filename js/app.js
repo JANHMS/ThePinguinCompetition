@@ -38,24 +38,24 @@ var octopus = {
     pinguinView.init();//PinguinView refers to the init funtion
   },
 
-  getpinguins: function() {
-    return model.pinguins;
+  getCurrentpinguin: function() {
+      return model.currentpinguin;
   },
 
-  getCurrentpinguin: function(){
 
-    return model.currectpinguin;
+  getpinguins: function() {
+      return model.pinguins;
   },
 
   // set the currently-selected pinguin to the object passed in -> fuction with pinguin as variable
-  setCurrentfuntion: function(pinguin) {
-    model.currentpinguin = pinguin;
+  setCurrentpinguin: function(pinguin) {
+      model.currentpinguin = pinguin;
   },
 
   // increments the counter for the currently-selected pinguin with ++ wie in Java
   incrementCounter: function() {
-    model.currectpinguin.clickCount++;
-    pinguinView.render();//render view again after octopus hadelt with the incremented count
+      model.currentpinguin.clickCount++;
+      pinguinView.render();//render view again after octopus hadelt with the incremented count
   }
 
 };
@@ -71,10 +71,10 @@ var pinguinView ={
     // on click, increment the current pinguin's counter Eveentlisterner !
     this.pinguinImageElem.addEventListener('click', function(){
         octopus.incrementCounter();
-      });
+    });
 
-      //render the views
-      this.render();
+    //render the views
+    this.render();
 
   },
 
