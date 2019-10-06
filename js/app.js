@@ -102,7 +102,8 @@ var pinguinListView = {
     // get the pinguins we'll be rendering from the octopus
     var pinguins = octopus.getpinguins();
 
-
+    // empty the pinguin list
+    this.pinguinListElem.innerHTML = '';
     // loop over the pinguins like in JAVA
     for (i = 0; i < pinguins.length; i++) {
         // this is the pinguin we're currently looping over
