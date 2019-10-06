@@ -7,22 +7,25 @@ var model = {
             clickCount : 0,
             name : 'Cutie1',
             imgSrc : 'img/pinguin1.jpg',
-
+            imgAttribution:'https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.welt.de%2Fimg%2Fwissenschaft%2Fumwelt%2Fmobile135349998%2F5092502047-ci102l-w1024%2FKaiserpinguin-Kaiser-Pinguin-Aptenodytes-forsteri-Emperor-penguin-2.jpg&imgrefurl=https%3A%2F%2Fwww.welt.de%2Fwissenschaft%2Fumwelt%2Farticle135350001%2FWarum-Pinguine-in-der-Antarktis-nicht-frieren.html&tbnid=JJdmSnwCPoEBXM&vet=12ahUKEwjkjY_lpIjlAhUH7xoKHaoGCCEQMygiegUIARDVAQ..i&docid=7FeUyY37BfDxlM&w=1024&h=1001&q=pinguin&client=safari&ved=2ahUKEwjkjY_lpIjlAhUH7xoKHaoGCCEQMygiegUIARDVAQ'
         },
         {
             clickCount : 0,
             name : 'Cutie2',
             imgSrc : 'img/Pinguin2.jpg',
+            imgAttribution:'https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia1.faz.net%2Fppmedia%2Faktuell%2Fgesellschaft%2F3149992713%2F1.661297%2Fformat_top1_breit%2Fpinguin-luckyfeed-liegt.jpg&imgrefurl=https%3A%2F%2Fwww.faz.net%2Faktuell%2Fgesellschaft%2Fneuseeland-gestrandeter-pinguin-liegt-im-kuenstlichen-koma-13313.html&tbnid=I3ph2RJrzACdyM&vet=12ahUKEwjkjY_lpIjlAhUH7xoKHaoGCCEQMygGegUIARCZAQ..i&docid=CDAF41v64xq0MM&w=960&h=430&q=pinguin&client=safari&ved=2ahUKEwjkjY_lpIjlAhUH7xoKHaoGCCEQMygGegUIARCZAQ'
         },
         {
             clickCount : 0,
             name : 'Cutie3',
             imgSrc : 'img/pinguin3.jpg',
+            imgAttribution:'https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.welt.de%2Fimg%2Fvermischtes%2Fmobile159305564%2F2202503347-ci102l-w1024%2FEselpinguin-Esel-Pinguin-Eselspinguin-Esels-Pinguin-Pygosceli.jpg&imgrefurl=https%3A%2F%2Fwww.welt.de%2Fvermischtes%2Farticle159301391%2FAls-ein-Pinguin-sein-Weibchen-mit-einem-anderen-findet.html&tbnid=UpgSTKabXYm6xM&vet=12ahUKEwjkjY_lpIjlAhUH7xoKHaoGCCEQMygJegUIARCfAQ..i&docid=LxFGuomJ2U04bM&w=1024&h=1001&q=pinguin&client=safari&ved=2ahUKEwjkjY_lpIjlAhUH7xoKHaoGCCEQMygJegUIARCfAQ'
         },
         {
             clickCount : 0,
             name : 'Cutie4',
             imgSrc : 'img/pinguin4.jpg',
+            imgAttribution:'https://www.google.com/imgres?imgurl=https%3A%2F%2Fglobalmagazin.com%2Ftypo3temp%2Fpics%2FPinguin_antartica-3427135_640_Pixabay_CC_51383eee93.jpg&imgrefurl=https%3A%2F%2Fglobalmagazin.com%2Fthemen%2Fklima%2Fpinguin-kot-als-gradmesser-des-klimawandels%2F&tbnid=bSDlkbMGWPxiSM&vet=12ahUKEwjkjY_lpIjlAhUH7xoKHaoGCCEQMygHegUIARCbAQ..i&docid=viIHn223cRakHM&w=600&h=400&q=pinguin&client=safari&ved=2ahUKEwjkjY_lpIjlAhUH7xoKHaoGCCEQMygHegUIARCbAQ'
         },
 
     ]
