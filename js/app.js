@@ -77,7 +77,14 @@ var pinguinView ={
       this.render();
 
   },
-  
 
+  render function() {
+    // update the DOM elements with values from the current pinguin
+    var currentpinguin = octopus.getCurrentpinguin();
+    this.countElem.textContent = currectpinguin.clickCount;
+    this.pinguinNameElem.textContent = currentpinguin.name;
+    this.pinguinImageElem.src = currentpinguin.imgSrc;
 
+  }
+};
 }
