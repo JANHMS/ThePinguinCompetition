@@ -12,7 +12,7 @@ var model = {
         {
             clickCount : 0,
             name : 'Cutie2',
-            imgSrc : 'img/Pinguin2.jpg',
+            imgSrc : 'img/pinguin2.jpg',
             imgAttribution:'https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia1.faz.net%2Fppmedia%2Faktuell%2Fgesellschaft%2F3149992713%2F1.661297%2Fformat_top1_breit%2Fpinguin-luckyfeed-liegt.jpg&imgrefurl=https%3A%2F%2Fwww.faz.net%2Faktuell%2Fgesellschaft%2Fneuseeland-gestrandeter-pinguin-liegt-im-kuenstlichen-koma-13313.html&tbnid=I3ph2RJrzACdyM&vet=12ahUKEwjkjY_lpIjlAhUH7xoKHaoGCCEQMygGegUIARCZAQ..i&docid=CDAF41v64xq0MM&w=960&h=430&q=pinguin&client=safari&ved=2ahUKEwjkjY_lpIjlAhUH7xoKHaoGCCEQMygGegUIARCZAQ'
         },
         {
@@ -30,7 +30,7 @@ var model = {
 
     ]
 };
-
+// the octopus is a dictionary of functions, whoch we use to handle our DOM
 var octopus = {
   init: function() {
     // set our current pinguin to the first one in the list
@@ -45,7 +45,7 @@ var octopus = {
       return model.currentpinguin;
   },
 
-
+//gets all pinguins from the pincuins dictionary
   getpinguins: function() {
       return model.pinguins;
   },
@@ -71,9 +71,9 @@ var pinguinView ={
     this.pinguinNameElem = document.getElementById('pinguin-name');
     this.pinguinImageElem = document.getElementById('pinguin-img');
     this.countElem = document.getElementById('pinguin-count');
-    // on click, increment the current pinguin's counter Eveentlisterner !
+    // on click, increment the current pinguin's counter Eveentlisterner ! when we click on the Inmage
     this.pinguinImageElem.addEventListener('click', function(){
-        octopus.incrementCounter();
+        octopus.incrementCounter();//refers to the line 59
     });
 
     //render the views
@@ -83,17 +83,17 @@ var pinguinView ={
 
   render: function() {
       // update the DOM elements with values from the current pinguin
-      var currentpinguin = octopus.getCurrentpinguin();
+      var currentpinguin = octopus.getCurrentpinguin();//octopus gets the current pinguin
       this.countElem.textContent = currentpinguin.clickCount;
-      this.pinguinNameElem.textContent = currentpinguin.name;
-      this.pinguinImageElem.src = currentpinguin.imgSrc;
+      this.pinguinNameElem.textContent = currentpinguin.name;//text is the name
+      this.pinguinImageElem.src = currentpinguin.imgSrc;//src is the Imgsrc
   }
 };
 
 var pinguinListView = {
 
   init: function() {
-      // store the DOM element for easy access later
+      // store the DOM element for easy access later dynamic JS with static html
       this.pinguinListElem = document.getElementById('pinguin-list');
 
       // render this view (update the DOM elements with the right values)
@@ -105,17 +105,17 @@ var pinguinListView = {
       // get the pinguins we'll be rendering from the octopus
       var pinguins = octopus.getpinguins();
 
-      // empty the pinguin list
-      this.pinguinListElem.innerHTML = '';
+      // empty the pinguin
+      this.pinguinListElem.innerHTML = '';// set '' which is empty the list
 
       // loop over the pinguins
-      for (i = 0; i < pinguins.length; i++) {
+      for (i = 0; i < pinguins.length; i++) {//liek in JAVA 0,1,2,3 because we have 4 pincuins
           // this is the pinguin we're currently looping over
           pinguin = pinguins[i];
 
           // make a new pinguin list item and set its text
-          elem = document.createElement('li');
-          elem.textContent = pinguin.name;
+          elem = document.createElement('li');//created elem object
+          elem.textContent = pinguin.name;//set the text to the name
 
           // on click, setCurrentpinguin and render the pinguinView
           // (this uses our closure-in-a-loop trick to connect the value
@@ -128,7 +128,7 @@ var pinguinListView = {
           })(pinguin));
 
           // finally, add the element to the list
-          this.pinguinListElem.appendChild(elem);
+          this.pinguinListElem.appendChild(elem);//append to add, refered to the elem we created in 123
       }
   }
 };
