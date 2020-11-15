@@ -1,3 +1,3 @@
 # ThePinguinCompetition
 
-JS interactive app with counter
+JS interactive app with pinguin counter
